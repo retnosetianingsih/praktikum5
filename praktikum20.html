@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praktikum 2 | Event Mouse</title>
+    <script type="text/javascript" src="asset/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="asset/css/modal.css">
+</head>
+<body>
+    <center><h1>Membuat modal dialog dengan JQuery</h1></center>
+    <button id="tombol">KLIK SAYA !!</button>
+    KLIK TOMBOL UNTUK MENAMPILKAN MODAL ULANG
+    <div id="bg"></div>
+    <div id="modal-kotak">
+    <div id="atas">
+        Kalkulator Sederhana <br>
+        <table>
+            <tr>
+                <td>
+                    <input type="text"  id="nilai1" name="nilai1" placeholder="Nilai 1"><br>
+                    <input type="text"  id="nilai2" name="nilai2" placeholder="Nilai 2"> <br><br>
+                    <input type="text"  id="hasil" name="hasil" placeholder="Hasil"> <br>
+                </td>
+
+                <td>
+                    <button type="button" id="tambah" style="width:100px" >+</button> <br>
+                    <button type="button" id="kurangi" style="width:100px">-</button> <br>
+                    <button type="button" id="kali" style="width:100px">x</button> <br>
+                    <button type="button" id="bagi" style="width:100px">:</button> <br>
+                </td>
+            </tr> 
+        </table>
+
+    </div>
+    <div id="bawah">
+         <button id="tombol-tutup">CLOSE</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#tombol').click(function(){
+                $('#modal-kotak , #bg').fadeIn("slow");
+            });
+            $('#tombol-tutup').click(function(){
+                $('#modal-kotak , #bg').fadeOut("slow");
+            });
+
+            $('#tambah').click(function(){
+                //get value
+                var nilai1 = $("#nilai1").val();
+                var nilai2 = $("#nilai2").val();
+                var hasil = parseFloat(nilai1) + parseFloat(nilai2);
+                //set velue
+                $("#hasil").val(hasil);
+            });
+            $('#kurangi').click(function(){
+                //get value
+                var nilai1 = $("#nilai1").val();
+                var nilai2 = $("#nilai2").val();
+                var hasil = parseFloat(nilai1) - parseFloat(nilai2);
+                //set velue
+                $("#hasil").val(hasil);
+            });
+            $('#kali').click(function(){
+                //get value
+                var nilai1 = $("#nilai1").val();
+                var nilai2 = $("#nilai2").val();
+                var hasil = parseFloat(nilail) * parseFloat(nilai2);
+                //set velue
+                $("#hasil").val(hasil);
+            });
+            $('#bagi').click(function(){
+                //get value
+                var nilai1 = $("#nilai1").val();
+                var nilai2 = $("#nilai2").val();
+                var hasil = parseFloat(nilail) / parseFloat(nilai2);
+                //set velue
+                $("#hasil").val(hasil);
+            });
+        });
+    </script>
+</body>
+</html>
